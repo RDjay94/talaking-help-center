@@ -19,7 +19,7 @@ window.TK_CONTENT = {
       ctaPlay: "Play now", ctaJoin: "Register free", help: "Still stuck? Tap the chat bubble in the app to talk to support 24/7.",
       footer: "21+ only. Play responsibly. For entertainment purposes.",
       tip: "Tip", warn: "Important", copied: "Link copied!", share: "Copy link",
-      cats: { start: "Getting started", money: "Payments", rewards: "Rewards" }
+      cats: { start: "Getting started", money: "Payments", rewards: "Rewards", agent: "Agent Program" }
     },
     fil: {
       langLabel: "English", brandTag: "Help Center",
@@ -34,7 +34,7 @@ window.TK_CONTENT = {
       ctaPlay: "Laro na", ctaJoin: "Mag-register", help: "May tanong pa? I-tap ang chat bubble sa app para makausap ang support, 24/7.",
       footer: "21+ lamang. Maglaro nang responsable. Para sa libangan lamang.",
       tip: "Tip", warn: "Mahalaga", copied: "Nakopya ang link!", share: "Kopyahin ang link",
-      cats: { start: "Pagsisimula", money: "Bayad", rewards: "Rewards" }
+      cats: { start: "Pagsisimula", money: "Bayad", rewards: "Rewards", agent: "Agent Program" }
     }
   },
   tutorials: [
@@ -124,6 +124,34 @@ window.TK_CONTENT = {
       ],
       notes: {
         warn: { en: "Account Name must match your GCash/Maya name exactly. Keep your Transaction PIN private.", fil: "Dapat eksaktong kapareho ng pangalan sa GCash/Maya ang Account Name. Huwag ibigay kahit kanino ang Transaction PIN mo." }
+      }
+    },
+    {
+      id: "agent", cat: "agent", icon: "⭐", accent: "#FF4DA6", duration: "0:57", wide: true,
+      video: { en: "videos/agent-en.mp4", fil: "videos/agent-fil.mp4" },
+      shots: { en: "agent-en", fil: "agent" },
+      title: { en: "How to Become an Agent", fil: "Paano Maging Agent" },
+      summary: {
+        en: "Apply to the Talaking Agent Program, then grab your invitation link and QR code from Agent Center.",
+        fil: "Mag-apply sa Talaking Agent Program, tapos kunin ang invitation link at QR code mo sa Agent Center."
+      },
+      steps: [
+        { en: ["Click Affiliate", "Log in to Talaking on your computer, then click Affiliate in the left menu."], fil: ["I-click ang Affiliate", "Mag-log in sa Talaking sa computer mo, tapos i-click ang Affiliate sa menu sa kaliwa."] },
+        { en: ["Meet the Agent Program", "The Agent Program page opens. You earn from the players you bring to Talaking."], fil: ["Ito ang Agent Program", "Bubukas ang Agent Program page. Kikita ka mula sa mga player na dala mo sa Talaking."] },
+        { en: ["3 ways you get paid", "Deposit commission (0.8%–1.3%), turnover commission (0.05%–0.12%) and profit share (25%–40%)."], fil: ["Tatlong paraan para kumita", "Deposit commission (0.8%–1.3%), turnover commission (0.05%–0.12%), at profit share (25%–40%)."] },
+        { en: ["Fill in Apply Now", "Scroll down to Apply Now. Type your Talaking username and your mobile number."], fil: ["Sagutan ang Apply Now", "Mag-scroll pababa sa Apply Now. I-type ang Talaking username at mobile number mo."] },
+        { en: ["Tick the box & send", "Tick the box to confirm you're 21 or older and agree to the Agent Terms, then click Send My Application."], fil: ["I-check ang box at i-send", "I-check ang box kung 21 pataas ka na at sang-ayon ka sa Agent Terms, tapos i-click ang Send My Application."] },
+        { en: ["Wait for the call", "“Got it!” means your application is in. The Talaking team will call you — keep your phone on."], fil: ["Hintayin ang tawag", "Kapag lumabas ang “Got it!”, pasok na ang application mo. Tatawagan ka ng Talaking team — huwag i-off ang phone mo."] },
+        { en: ["Open Agent Center", "Once approved, click your username at the top right. Agent Center now appears in the menu."], fil: ["Buksan ang Agent Center", "Kapag approved ka na, i-click ang username mo sa kanang itaas. May Agent Center na sa menu."] },
+        { en: ["Check your Overview", "Overview shows your team's logins, registrations, deposits and bets."], fil: ["Tingnan ang Overview", "Sa Overview, kita mo ang logins, registrations, deposits, at bets ng team mo."] },
+        { en: ["Account → Link Management", "Click Account, then open the Link Management tab."], fil: ["Account → Link Management", "I-click ang Account, tapos buksan ang Link Management tab."] },
+        { en: ["Find your invitation links", "Your invitation links are listed here — one for members and one for agents."], fil: ["Hanapin ang invitation links", "Nandito ang invitation links mo — isa para sa member at isa para sa agent."] },
+        { en: ["Click the QR icon", "Click the QR icon beside a link to open its QR code."], fil: ["I-click ang QR icon", "I-click ang QR icon sa tabi ng link para lumabas ang QR code nito."] },
+        { en: ["Save or copy, then share", "Click Save QR Code or Copy Link and share it with friends. When they register and play, you earn."], fil: ["I-save o i-copy, tapos i-share", "I-click ang Save QR Code o Copy Link at i-share sa mga kaibigan mo. Kapag nag-register at naglaro sila, kikita ka."] }
+      ],
+      notes: {
+        warn: { en: "You must be 21 or older and already have a Talaking player account — that account becomes your agent account.", fil: "Dapat 21 pataas ka na at may Talaking player account ka na — iyon ang magiging agent account mo." },
+        tip: { en: "This guide is recorded on a computer. Agent Center only appears after your application is approved.", fil: "Sa computer ni-record ang guide na ito. Lalabas lang ang Agent Center kapag approved na ang application mo." }
       }
     }
   ]

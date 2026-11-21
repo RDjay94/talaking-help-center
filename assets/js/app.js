@@ -9,6 +9,8 @@
   function t(k) { return C.ui[lang][k]; }
   function L(o) { return o[lang] || o.en; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function vid(tut) { return typeof tut.video === "string" ? tut.video : L(tut.video); }
+  function dir(tut) { return "assets/img/steps/" + (tut.shots ? L(tut.shots) : tut.id); }
   function byId(id) { return C.tutorials.filter(function (x) { return x.id === id; })[0]; }
 
   function applyUi() {
@@ -19,7 +21,7 @@
 
   function card(tut, i) {
     return '<a class="card reveal" style="--accent:' + tut.accent + ';--d:' + (i * 70) + 'ms" href="#/g/' + tut.id + '">' +
-      '<div class="card-thumb"><img src="assets/img/steps/' + tut.id + '/cover.jpg" alt="" loading="lazy">' +
+      '<div class="card-thumb"><img src="' + dir(tut) + '/cover.jpg" alt="" loading="lazy">' +
       '<span class="play-dot">▶</span><span class="dur">' + tut.duration + '</span></div>' +
       '<div class="card-body"><span class="chip">' + tut.icon + " " + esc(t("cats")[tut.cat]) + '</span>' +
       '<h3>' + esc(L(tut.title)) + '</h3><p>' + esc(L(tut.summary)) + '</p>' +
@@ -34,7 +36,7 @@
       '<div class="hero-cta"><a class="btn btn-pink" target="_blank" rel="noopener" href="' + C.links.register + '">' + t("ctaJoin") + '</a>' +
       '<a class="btn btn-ghost" href="#guides">▶ ' + t("videoTitle") + '</a></div></div>' +
       '<div class="hero-phones reveal" aria-hidden="true">' + C.tutorials.slice(0, 3).map(function (x, i) {
-        return '<div class="phone p' + i + '"><img src="assets/img/steps/' + x.id + '/cover.jpg" alt=""></div>';
+        return '<div class="phone p' + i + '"><img src="' + dir(x) + '/cover.jpg" alt=""></div>';
       }).join("") + '</div></section>' +
       '<section class="guides" id="guides"><div class="toolbar">' +
       '<div class="search"><span>🔍</span><input id="q" type="search" placeholder="' + esc(t("search")) + '" value="' + esc(query) + '"></div>' +
@@ -80,12 +82,12 @@
       '<div class="meta"><span>▶ ' + tut.duration + " " + t("minRead") + '</span><span>' + tut.steps.length + " " + t("steps") + '</span>' +
       '<button class="share" type="button" id="share">🔗 ' + t("share") + '</button></div></div>' +
       '<div class="guide-grid"><div class="video-col reveal"><div class="video-wrap">' +
-      '<video id="vid" playsinline controls preload="metadata" poster="assets/img/steps/' + tut.id + '/cover.jpg" src="' + tut.video + '"></video>' +
+      '<video id="vid" playsinline controls preload="metadata" poster="' + dir(tut) + '/cover.jpg" src="' + vid(tut) + '"></video>' +
       '<button class="cover" id="cover" type="button"><span class="big-play">▶</span><span class="cover-title">' + esc(L(tut.title)) + '</span><span class="cover-pill">' + tut.duration + " · " + t("videoTitle") + '</span></button>' +
       '</div>' + note("warn") + note("tip") + '</div>' +
       '<div class="steps-col"><h2>' + t("stepsTitle") + '</h2><ol class="steps">' + tut.steps.map(function (s, i) {
         var num = String(i + 1).padStart(2, "0");
-        return '<li class="step reveal" style="--d:' + (i % 3) * 60 + 'ms"><div class="shot"><img loading="lazy" src="assets/img/steps/' + tut.id + "/step-" + num + '.jpg" alt="' + esc(L(s)[0]) + '"></div>' +
+        return '<li class="step reveal" style="--d:' + (i % 3) * 60 + 'ms"><div class="shot' + (tut.wide ? " wide" : "") + '"><img loading="lazy" src="' + dir(tut) + "/step-" + num + '.jpg" alt="' + esc(L(s)[0]) + '"></div>' +
           '<div class="step-txt"><span class="badge">' + t("stepLabel") + " " + (i + 1) + '</span><h3>' + esc(L(s)[0]) + '</h3><p>' + esc(L(s)[1]) + "</p></div></li>";
       }).join("") + '</ol></div></div>' +
       '<section class="cta-band reveal"><div><h2>' + t("ctaTitle") + '</h2><p>' + t("ctaSub") + '</p></div>' +
