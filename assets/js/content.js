@@ -127,7 +127,7 @@ window.TK_CONTENT = {
       }
     },
     {
-      id: "agent", cat: "agent", icon: "⭐", accent: "#FF4DA6", duration: "0:57", wide: true,
+      id: "agent", cat: "agent", icon: "⭐", accent: "#FF4DA6", duration: "1:19", wide: true,
       video: { en: "videos/agent-en.mp4", fil: "videos/agent-fil.mp4" },
       shots: { en: "agent-en", fil: "agent" },
       title: { en: "How to Become an Agent", fil: "Paano Maging Agent" },
